@@ -5,8 +5,8 @@ now = datetime.datetime.now()
 
 bot = commands.Bot("c!")
 
-bypass_list = ["428370014798872586"]
-TOKEN = "NDI4MzcwMDE0Nzk4ODcyNTg2.DaVW-w.FblsPqKSyrR575QCFak6pze0yOw"
+bypass_list = ["put your client id here"]
+TOKEN = "put your token here"
 
 @bot.event
 async def on_message(message):
