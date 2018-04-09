@@ -25,9 +25,12 @@ async def on_message(message):
         embed=discord.Embed(description=usr + msg, color=0xF4BC0C)
         await bot.send_message(message.channel, embed=embed)
         await bot.delete_message(message)
-    elif message.content.upper().startswith(";VOTE"):
+    elif message.content.upper().startswith("C!VOTE"):
         await bot.add_reaction(message, '\U0001F44D')
         await bot.add_reaction(message, '\U0001F44E')
+    elif message.content.upper().startswith("C!BANNED"):
+        bans = await bot.get_bans(serverID)
+        await bot.send_message(message.channel, bans)
     elif message.content.upper().startswith("C!WHISPER"):
         args = message.content.split(" ")
         msg = "%s" % (" ".join(args[1:])).format(args[1])
