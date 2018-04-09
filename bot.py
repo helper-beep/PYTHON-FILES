@@ -42,7 +42,7 @@ async def on_message(message):
         await bot.send_message(message.channel, embed=embed)
         await bot.delete_message(message)
     elif message.content.upper().startswith("C!HELP"):
-        embed=discord.Embed(title="Hello! Need help? These are my commands.", description = "**THE COMMAND USAGE WILL BE DISPLAYED.**\n\n**c!help**, which is the command list\n\n*c!help*, as is\n\n**c!date**, which gets the date\n\n*c!date*, as is\n\n**c!link**, which gives an add link\n\n*c!link*, as is\n\n**c!kid**, which generates a random description\n\n*c!kid*, as is\n\n**c!adult**, which generates a random description\n\n*c!adult*, as is\n\n**c!members**, which lists the server members\n\n*c!members*, as is\n\n**c!slap**, which slaps an annoying dude\n\n*c!slap @username*\n\n**c!iam**, which is your Discord identity\n\n*c!iam*, as is\n\n**c!8ball**, which is my spin on a virtual 8 ball\n\n*c!8ball Will the sky fall?*\n\n**c!dice**, which is a dice roll\n\n*c!dice*, as is\n\n**c!opinion**, which asks opinion\n\n*c!opinion Am I smart?*\n\n**c!choice**, which chooses an option\n\n*c!choice Potatoes or carrots?*\n\n**c!coinflip**, which flips a virtual coin\n\n*c!coinflip*, as is\n\n**c!say**, which is public talk through me\n\n*c!say Hello!*\n\n**c!whisper**, which is anonymous talk\n\n*c!whisper Hello!*\n\n**c!command**, which commands a member\n\n*c!command @username [one] [two] [three]*", color=0xF4BC0C) 
+        embed=discord.Embed(title="Hello! Need help? These are my commands.", description = "**THE COMMAND USAGE WILL BE DISPLAYED.**\n\n**c!help**, which is the command list\n\n*c!help*, as is\n\n**c!vote**, which is the a public poll\n\n*c!vote* Should I change the server name?\n\n**c!info**, which is my info\n\n*c!info*, as is\n\n**c!banned**, which is the banned list\n\n*c!banned*, as is\n\n**c!date**, which gets the date\n\n*c!date*, as is\n\n**c!link**, which gives an add link\n\n*c!link*, as is\n\n**c!kid**, which generates a random description\n\n*c!kid*, as is\n\n**c!adult**, which generates a random description\n\n*c!adult*, as is\n\n**c!members**, which lists the server members\n\n*c!members*, as is\n\n**c!slap**, which slaps an annoying dude\n\n*c!slap @username*\n\n**c!iam**, which is your Discord identity\n\n*c!iam*, as is\n\n**c!8ball**, which is my spin on a virtual 8 ball\n\n*c!8ball Will the sky fall?*\n\n**c!dice**, which is a dice roll\n\n*c!dice*, as is\n\n**c!opinion**, which asks opinion\n\n*c!opinion Am I smart?*\n\n**c!choice**, which chooses an option\n\n*c!choice Potatoes or carrots?*\n\n**c!coinflip**, which flips a virtual coin\n\n*c!coinflip*, as is\n\n**c!say**, which is public talk through me\n\n*c!say Hello!*\n\n**c!whisper**, which is anonymous talk\n\n*c!whisper Hello!*\n\n**c!command**, which commands a member\n\n*c!command @username [one] [two] [three]*", color=0xF4BC0C) 
         embed.set_footer(text="© Copyright DakuStudios " + str(now.year) + ".")
         await bot.send_message(message.channel, embed=embed)
         await bot.delete_message(message)
@@ -100,6 +100,14 @@ async def on_message(message):
         embed=discord.Embed(description="https://discordapp.com/oauth2/authorize?client_id=428370014798872586&permissions=2146958583&scope=bot", color=0xF4BC0C)
         await bot.send_message(message.channel, embed=embed)
         await bot.delete_message(message)
+    elif message.content.upper().startswith("C!INFO"):
+        embed=discord.Embed(title = "Hiya! I'm Cole!", color = 0xF4BC0C)
+        server = len(bot.servers)
+        embed.set_thumbnail(url=bot.user.avatar_url)
+        embed.add_field(name = "Server Count", value = "%s servers"%(server))
+        embed.add_field(name = "Invite", value = "[Add me!](https://discordapp.com/oauth2/authorize?client_id=427289891378823168&permissions=8&scope=bot)")
+        embed.set_footer(text="Requested by %s"%(message.author))
+        await bot.send_message(message.channel, embed=embed)
     elif message.content.upper().startswith("C!SLAP"):
         args = message.content.split(" ")
         ID = message.author.id
