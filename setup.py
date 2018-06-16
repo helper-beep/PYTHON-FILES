@@ -8,7 +8,7 @@ setup(name='python-package',
       scripts=[],
       packages=find_packages(),
       setup_requires=[
-          'numpy==1.11.0',
+          'numpy==1.14.5',
           'pytest-runner',
       ],
       install_requires=[
