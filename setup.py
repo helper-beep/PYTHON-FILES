@@ -21,7 +21,7 @@ setup(name='python-package',
           'raven == 5.32.0',
           'requests==2.12.*',
           'scipy==0.18.1',
-          'scikit-learn==0.18.1',
+          'scikit-learn==0.19.1',
       ],
       tests_require=[
           'pytest==2.9.1',
