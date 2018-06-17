@@ -25,7 +25,7 @@ setup(name='python-package',
       ],
       tests_require=[
           'pytest==2.9.1',
-          'responses==0.5.1',
+          'responses==0.9.0',
       ],
       extras_require=dict(
           API=[
