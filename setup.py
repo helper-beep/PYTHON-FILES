@@ -13,7 +13,7 @@ setup(name='python-package',
       ],
       install_requires=[
           'boto3==1.3.1',
-          'flake8 > 2.5.4, < 3.0.0',
+          'flake8 >2.5.4,<4.0.0',
           'gocardless_pro',
           'pandas==0.19.2',
           'pep8==1.7.0',
